@@ -478,24 +478,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
-.top-8{
-  top: 2rem;
+.top-4{
+  top: 1rem;
+}
+
+.top-16{
+  top: 4rem;
 }
 
 .bottom-0{
   bottom: 0px;
 }
 
-.-bottom-4{
-  bottom: -1rem;
+.-bottom-16{
+  bottom: -4rem;
 }
 
 .-top-20{
   top: -5rem;
-}
-
-.top-4{
-  top: 1rem;
 }
 
 .z-50{
@@ -506,9 +506,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 10;
 }
 
-.mx-20{
-  margin-left: 5rem;
-  margin-right: 5rem;
+.my-32{
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .my-2{
@@ -526,9 +526,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 3rem;
 }
 
-.mx-40{
-  margin-left: 10rem;
-  margin-right: 10rem;
+.mx-12{
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .mx-4{
@@ -561,6 +561,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 3rem;
 }
 
+.block{
+  display: block;
+}
+
 .flex{
   display: flex;
 }
@@ -569,12 +573,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.hidden{
+  display: none;
+}
+
 .aspect-auto{
   aspect-ratio: auto;
 }
 
 .h-16{
   height: 4rem;
+}
+
+.h-10{
+  height: 2.5rem;
 }
 
 .h-screen{
@@ -601,32 +613,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-.w-2\/6{
-  width: 33.333333%;
+.w-10{
+  width: 2.5rem;
+}
+
+.w-5\/6{
+  width: 83.333333%;
 }
 
 .w-4\/6{
   width: 66.666667%;
 }
 
+.w-11\/12{
+  width: 91.666667%;
+}
+
 .w-4\/5{
   width: 80%;
 }
 
-.w-2\/4{
-  width: 50%;
+.cursor-pointer{
+  cursor: pointer;
 }
 
-.grid-cols-3{
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.grid-rows-1{
-  grid-template-rows: repeat(1, minmax(0, 1fr));
-}
-
-.flex-row-reverse{
-  flex-direction: row-reverse;
+.flex-row{
+  flex-direction: row;
 }
 
 .flex-col{
@@ -651,11 +667,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between{
   justify-content: space-between;
-}
-
-.divide-white > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-divide-opacity));
 }
 
 .overflow-hidden{
@@ -720,9 +731,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-position: bottom;
 }
 
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-bottom{
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.p-10{
+  padding: 2.5rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .px-3{
@@ -735,14 +765,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .py-52{
@@ -753,16 +783,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.px-4{
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .text-center{
@@ -841,9 +861,65 @@ body{
   font-family: Lato, sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 @media (min-width: 1024px){
+  .lg\:-bottom-4{
+    bottom: -1rem;
+  }
+
+  .lg\:my-40{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  .lg\:mx-40{
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .lg\:block{
+    display: block;
+  }
+
+  .lg\:flex{
+    display: flex;
+  }
+
+  .lg\:hidden{
+    display: none;
+  }
+
+  .lg\:h-96{
+    height: 24rem;
+  }
+
+  .lg\:w-3\/6{
+    width: 50%;
+  }
+
+  .lg\:w-4\/6{
+    width: 66.666667%;
+  }
+
+  .lg\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
+
+  .lg\:justify-start{
+    justify-content: flex-start;
+  }
+
   .lg\:px-20{
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

@@ -7,3 +7,7 @@
 body {
     @apply font-lato bg-primary;
 }
+
+html {
+    @apply scroll-smooth;
+}

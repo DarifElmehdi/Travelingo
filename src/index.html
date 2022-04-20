@@ -10,9 +10,11 @@
             href="/public/imgs/favicon.png"
             type="image/x-icon"
         />
+        <script src="index.js"></script>
         <title>Travelingo</title>
     </head>
     <body>
+        <!--Navigation bar-->
         <header
             class="z-50 top-4 h-16 w-full flex justify-between items-center px-2 lg:px-20 absolute"
         >
@@ -20,23 +22,57 @@
                 <h1 class="px-2 text-2xl font-bold text-darkpink">
                     Travelingo
                 </h1>
-                <p class="text-md font-normal text-white">
+                <p class="text-md font-normal hidden lg:block text-white">
                     Exclusive travel experience.
                 </p>
             </div>
-            <ul class="flex items-center">
-                <li class="px-2 text-xl font-normal text-white">
-                    Destinations
+            <ul class="hidden lg:flex items-center">
+                <li class="px-2 text-xl font-normal text-white cursor-pointer">
+                    <a href="#destinations">Destinations</a>
                 </li>
-                <li class="px-2 text-xl font-normal text-white">About Us</li>
-                <li class="px-2 text-xl font-normal text-white">Support</li>
+                <li class="px-2 text-xl font-normal text-white cursor-pointer">
+                    <a href="#about">About Us</a>
+                </li>
+                <li class="px-2 text-xl font-normal text-white cursor-pointer">
+                    <a href="#">Support</a>
+                </li>
+            </ul>
+            <div class="block lg:hidden">
+                <img
+                    id="menu"
+                    src="/public/imgs/menu.svg"
+                    alt="menu"
+                    class="h-10 w-10 cursor-pointer block"
+                />
+                <img
+                    id="x"
+                    src="/public/imgs/x.svg"
+                    alt="x"
+                    class="h-10 w-10 cursor-pointer hidden"
+                />
+            </div>
+            <ul
+                id="nav"
+                class="w-full items-center justify-center absolute top-16 hidden"
+            >
+                <li class="px-2 text-xl font-normal text-white cursor-pointer">
+                    <a href="#destinations">Destinations</a>
+                </li>
+                <li class="px-2 text-xl font-normal text-white cursor-pointer">
+                    <a href="#about">About Us</a>
+                </li>
+                <li class="px-2 text-xl font-normal text-white cursor-pointer">
+                    <a href="#">Support</a>
+                </li>
             </ul>
         </header>
+
+        <!--Hero section-->
         <div
             id="hero-div"
-            class="flex items-center h-screen bg-center bg-cover bg-hero-bg"
+            class="flex lg:justify-start px-8 lg:px-20 h-screen bg-center bg-cover bg-hero-bg"
         >
-            <div class="w-2/6 flex-col justify-center mx-20">
+            <div class="w-5/6 lg:w-3/6 flex-col my-32 lg:my-40">
                 <h1 class="text-6xl font-extrabold text-white my-2">
                     Go on an
                 </h1>
@@ -55,18 +91,20 @@
                     >Explore destinations</a
                 >
             </div>
-            <img
-                src="/public/imgs/vector1.svg"
-                alt="vector1"
-                class="w-full h-auto absolute bottom-0"
-            />
         </div>
+        <img
+            src="/public/imgs/vector1.svg"
+            alt="vector1"
+            class="w-full h-auto absolute bottom-0"
+        />
+
+        <!--Check  booking section-->
         <div
             id="check-booking"
-            class="z-10 flex justify-center w-full absolute -bottom-4"
+            class="z-10 flex justify-center w-full absolute -bottom-16 px-4 lg:-bottom-4"
         >
             <div
-                class="w-4/6 py-2 rounded-3xl bg-white flex flex-col items-center"
+                class="w-full lg:w-4/6 py-2 rounded-3xl bg-white flex flex-col items-center"
             >
                 <h1 class="text-black text-2xl font-bold my-4">
                     Check your booking information
@@ -92,6 +130,8 @@
                 >
             </div>
         </div>
+
+        <!-- About Section-->
         <div
             id="about"
             class="w-full bg-about-bg bg-bottom bg-cover flex flex-col items-center justify-center relative py-52"
@@ -102,7 +142,7 @@
                 class="w-full h-auto absolute -top-20"
             />
             <h1 class="text-5xl text-white font-bold my-12">About Us</h1>
-            <div class="grid grid-cols-3 grid-rows-1 divide-white mx-40">
+            <div class="grid grid-cols-1 xl:grid-cols-3 mx-12 lg:mx-40">
                 <div class="mx-4 text-center">
                     <h1 class="text-3xl text-white font-bold my-4">
                         High class travel agency
@@ -146,21 +186,23 @@
                 class="w-full h-auto absolute bottom-0"
             />
         </div>
+
+        <!--Destination section-->
         <div id="destinations" class="bg-secondary py-8 w-full">
             <h1 class="text-5xl text-white font-bold w-full text-center my-4">
                 Destinations
             </h1>
             <div class="w-full flex flex-col items-center">
                 <div
-                    class="bg-primary rounded-3xl w-4/5 flex overflow-hidden my-4"
+                    class="bg-primary rounded-3xl lg:h-96 w-11/12 flex-row lg:flex overflow-hidden my-4"
                 >
                     <img
                         src="/public/imgs/bahamas.jpg"
                         alt="bahamas"
-                        class="w-2/4 aspect-auto"
+                        class="w-full aspect-auto object-cover object-bottom"
                     />
                     <div
-                        class="text-white flex flex-col items-start justify-center px-10"
+                        class="text-white flex flex-col items-start justify-center p-10"
                     >
                         <h1 class="text-5xl font-bold my-2">Bahamas</h1>
                         <h2 class="text-2xl font-semibold mb-4">
@@ -189,15 +231,15 @@
                     </div>
                 </div>
                 <div
-                    class="bg-primary rounded-3xl w-4/5 flex flex-row-reverse overflow-hidden my-4"
+                    class="bg-primary rounded-3xl w-11/12 lg:h-96 flex flex-col lg:flex-row-reverse overflow-hidden my-4"
                 >
                     <img
                         src="/public/imgs/french-polynesia.jpg"
                         alt="bahamas"
-                        class="w-2/4 aspect-auto"
+                        class="w-full aspect-auto object-cover object-bottom"
                     />
                     <div
-                        class="text-white flex flex-col items-start justify-center px-10"
+                        class="text-white flex flex-col items-start justify-center p-10"
                     >
                         <h1 class="text-5xl font-bold my-2">
                             French Polynesia
@@ -228,6 +270,7 @@
             </div>
         </div>
 
+        <!-- Footer section-->
         <div
             id="foote"
             class="h-40 w-full bg-primary flex flex-col items-center justify-center"
